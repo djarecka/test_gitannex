@@ -21,7 +21,7 @@ script:
   - git config --global user.email "djarecka@gmail.com"
   - git config --global user.name "Dorota Jarecka"
   - git fetch origin git-annex
-  - git-annex init
+  - git annex init --debug
   - git annex enableremote cloud5
 #  - git annex get
   - python -m datalad `which pytest` test.py
