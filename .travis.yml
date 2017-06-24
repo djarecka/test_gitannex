@@ -16,4 +16,6 @@ before_install:
 install:
   - pip install datalad
 
-script: python -m datalad `which pytest` test.py
+script: 
+  - git annex get
+  - python -m datalad `which pytest` test.py
