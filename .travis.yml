@@ -18,11 +18,11 @@ install:
   - pip install datalad
 
 script: 
-#  - git config --global user.email "djarecka@gmail.com"
-#  - git config --global user.name "Dorota Jarecka"
-  - git fetch origin git-annex:git-annex
+  - git config --global user.email "djarecka@gmail.com"
+  - git config --global user.name "Dorota Jarecka"
+ - git fetch origin git-annex:git-annex
 #git-annex
   - git annex init
   - git annex enableremote cloud5
-#  - git annex get
+#  - git annex get # seems to work without it when running python -m datalad
   - python -m datalad `which pytest` test.py
