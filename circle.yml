@@ -31,5 +31,5 @@ test:
     - git annex enableremote cloud5
     - git annex get
 
-    - docker run -it -v $PWD:/home myimage_test pytest test.py
+    - docker run -it -v $PWD:/home myimage_test pytest /home/test.py
     #- python -m datalad `which pytest` test.py
