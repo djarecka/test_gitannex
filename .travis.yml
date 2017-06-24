@@ -20,7 +20,7 @@ install:
 script: 
   - git config --global user.email "djarecka@gmail.com"
   - git config --global user.name "Dorota Jarecka"
- - git fetch origin git-annex:git-annex
+  - git fetch origin git-annex:git-annex
 #git-annex
   - git annex init
   - git annex enableremote cloud5
