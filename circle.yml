@@ -14,4 +14,4 @@ dependencies:
 test:
 
   override:
-    - py.test test.py
+    - python -m datalad `which pytest` test.py
