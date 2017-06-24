@@ -1,0 +1,28 @@
+language: python
+python:
+  - 3.5
+
+
+before_install:
+#- function apt_inst {
+#  bash <(wget -q -O- http://neuro.debian.net/_files/neurodebian-travis.sh) &&
+#  sudo apt-get -y update &&
+#  sudo apt-get install datalad;}
+#- travis_retry apt_inst
+
+  - bash <(wget -q -O- http://neuro.debian.net/_files/neurodebian-travis.sh)
+  - sudo apt-get -y update
+  - sudo apt-get install git-annex-standalone
+
+install:
+  - pip install datalad
+
+script: 
+  - git config --global user.email "djarecka@gmail.com"
+  - git config --global user.name "Dorota Jarecka"
+  - git fetch origin git-annex:git-annex
+#git-annex
+  - git annex init
+  - git annex enableremote cloud5
+#  - git annex get
+  - python -m datalad `which pytest` test.py
