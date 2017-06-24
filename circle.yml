@@ -14,4 +14,8 @@ dependencies:
 test:
 
   override:
+    #git-annex
+    - git annex init
+    - git annex enableremote cloud5
+
     - python -m datalad `which pytest` test.py
