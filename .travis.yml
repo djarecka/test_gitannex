@@ -5,4 +5,4 @@ python:
 install:
   - pip install datalad
 
-script: pytest test.py
+script: python -m datalad `which pytest` test.py
