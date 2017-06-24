@@ -3,6 +3,9 @@ machine:
     ubuntu-14.04-XXL-1167-271bbe4
   python:
     version: 3.5.0
+  services:
+    - docker
+
 
 dependencies:
   pre:
@@ -15,6 +18,10 @@ dependencies:
     - pip install datalad
     - pip install pytest
 
+    - pip install https://github.com/kaczmarj/neurodocker/archive/master.tar.gz
+    - neurodocker -b centos:7 -p yum --miniconda python_version=3.5.1 conda_install=traits,pandas,pytest pip_install=nipype --no-check-urls --no-print-df -o Dockerfile_test
+    - docker build -f Dockerfile_test -t myimage_test .
+
 test:
 
   override:
@@ -22,5 +29,7 @@ test:
     #git-annex
     - git annex init
     - git annex enableremote cloud5
+    - git annex get
 
-    - python -m datalad `which pytest` test.py
+    - docker run -it -v $PWD:/home myimage_test pytest test.py
+    #- python -m datalad `which pytest` test.py
