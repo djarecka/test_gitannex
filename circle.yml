@@ -9,13 +9,11 @@ machine:
 
 dependencies:
   pre:
-    - bash <(wget -q -O- http://neuro.debian.net/_files/neurodebian-travis.sh)
     - sudo apt-get -y update
-    - sudo apt-get install git-annex-standalone
+    - sudo apt-get install git-annex
 
   override:
     - pip install --upgrade pip
-    - pip install datalad
     - pip install pytest
 
     - pip install https://github.com/kaczmarj/neurodocker/archive/master.tar.gz
