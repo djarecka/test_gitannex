@@ -1,7 +1,8 @@
 language: python
 python:
-- 3.5
+  - 3.5
 
 install:
-- travis_retry pip install datalad
+  - pip install datalad
 
+script: pytest test.py
