@@ -17,5 +17,6 @@ install:
   - pip install datalad
 
 script: 
+  - git annex enableremote cloud5
   - git annex get
   - python -m datalad `which pytest` test.py
