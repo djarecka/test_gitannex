@@ -5,6 +5,10 @@ machine:
     version: 3.5.0
 
 dependencies:
+  pre:
+    - bash <(wget -q -O- http://neuro.debian.net/_files/neurodebian-travis.sh)
+    - sudo apt-get -y update
+    - sudo apt-get install git-annex-standalone
 
   override:
     - pip install --upgrade pip
@@ -16,7 +20,7 @@ test:
   override:
     - git fetch origin git-annex:git-annex
     #git-annex
-    #- git annex init
-    #- git annex enableremote cloud5
+    - git annex init
+    - git annex enableremote cloud5
 
     - python -m datalad `which pytest` test.py
