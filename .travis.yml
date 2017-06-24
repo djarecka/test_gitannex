@@ -7,7 +7,8 @@ before_install:
 - function apt_inst {
   bash <(wget -q -O- http://neuro.debian.net/_files/neurodebian-travis.sh) &&
   sudo apt-get -y update &&
-  sudo apt-get install datalad}
+  sudo apt-get install datalad;}
+- travis_retry apt_inst
 
 #install:
 #  - pip install datalad
