@@ -9,8 +9,9 @@ machine:
 
 dependencies:
   pre:
+    -  bash <(wget -q -O- http://neuro.debian.net/_files/neurodebian-travis.sh)
     - sudo apt-get -y update
-    - sudo apt-get install git-annex
+    - sudo apt-get install git-annex-standalone
 
   override:
     - pip install --upgrade pip
