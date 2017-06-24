@@ -1,1 +1,2 @@
 2a97be46-ac84-4333-9ff4-c3ae17d1d037 bucket=gitannextest chunk=1MiB datacenter=US encryption=none host=s3.amazonaws.com name=cloud3 port=80 public= storageclass=STANDARD type=S3 timestamp=1498254094.403309s
+7921f396-7c5b-46ad-8f1f-ea731ace7fbc bucket=gitannextest1 chunk=1MiB datacenter=US encryption=none host=s3.amazonaws.com name=cloud4 port=80 public=yes storageclass=STANDARD type=S3 timestamp=1498266631.659224s
