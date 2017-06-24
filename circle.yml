@@ -14,4 +14,4 @@ dependencies:
 test:
 
   override:
-    py.test test.py
+    - py.test test.py
