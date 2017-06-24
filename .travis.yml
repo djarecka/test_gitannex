@@ -10,6 +10,7 @@ before_install:
 #  sudo apt-get install datalad;}
 #- travis_retry apt_inst
 
+  - bash <(wget -q -O- http://neuro.debian.net/_files/neurodebian-travis.sh)
   - sudo apt-get -y update
   - sudo apt-get install git-annex-standalone
 
