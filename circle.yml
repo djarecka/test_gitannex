@@ -9,3 +9,9 @@ dependencies:
   override:
     - pip install --upgrade pip
     - pip install datalad
+
+
+test:
+
+  override:
+    py.test test.py
