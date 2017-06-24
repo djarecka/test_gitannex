@@ -11,12 +11,13 @@ before_install:
 #- travis_retry apt_inst
 
   - sudo apt-get -y update
-  - sudo apt-get install git-annex
+  - sudo apt-get install git-annex-standalone
 
 install:
   - pip install datalad
 
 script: 
+  - git fetch origin git-annex
   - git annex enableremote cloud5
-  - git annex get
+#  - git annex get
   - python -m datalad `which pytest` test.py
