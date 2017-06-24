@@ -16,7 +16,7 @@ test:
   override:
     - git fetch origin git-annex:git-annex
     #git-annex
-    - git annex init
-    - git annex enableremote cloud5
+    #- git annex init
+    #- git annex enableremote cloud5
 
     - python -m datalad `which pytest` test.py
